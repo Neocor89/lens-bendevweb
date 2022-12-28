@@ -1,30 +1,21 @@
+import { ConnectWallet, useAddress } from '@thirdweb-dev/react'
+import useLogin from '../lib/auth/useLogin';
 // import Image from 'next/image'
 // import { Inter } from '@next/font/google'
 // import styles from '../styles/Home.module.css'
-import { PublicationSortCriteria, useExplorePublicationsQuery } from '../graphql/generated'
+// import { PublicationSortCriteria, useExplorePublicationsQuery } from '../graphql/generated'
 
 // const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home() {
 
-  const {data, isLoading, error} = useExplorePublicationsQuery({
-      request: {
-        sortCriteria: PublicationSortCriteria.TopMirrored,
-      }
-    });
+  const address = useAddress();
+  const { mutate: requestLogin } = useLogin();
 
-  console.log({
-    data,
-    isLoading,
-    error,
-  });
+  if (!address) {
+    return <ConnectWallet />
+  }
   
-
-
-  return (
-    <>
-     <h1>Hello World!</h1>
-    </>
-  )
+  return <button onClick={() => requestLogin()}>Login</button>
 }
