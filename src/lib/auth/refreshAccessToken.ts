@@ -4,23 +4,28 @@ import {
   RefreshMutation, 
   RefreshMutationVariables
  } from "../../graphql/generated"
-import { readAccessToken } from "./helpers"
+import { readAccessToken, setAccessToken } from "./helpers"
 
+//: Fetching new access token
 export default async function refreshAccessToken() {
   //: Get current refresh token from Local Storage
-  const refreshToken = readAccessToken()?.refreshToken;
+  const currentRefreshToken = readAccessToken()?.refreshToken;
 
-  if (!refreshToken) return null;
+  if (!currentRefreshToken) return null;
 
   //: Send Lens Api from new access token
   const result = await fetcher<RefreshMutation, RefreshMutationVariables>(
     RefreshDocument,
     {
       request: {
-        refreshToken: refreshToken,
+        refreshToken: currentRefreshToken,
       }
     }
     )();
 
-    //: Set new access token in Local Storage test command git 
+    //: Set new access token in Local Storage 
+    const { accessToken, refreshToken: newRefreshToken } = result.refresh;
+    setAccessToken(accessToken, newRefreshToken);
+
+    return accessToken as string;
 }

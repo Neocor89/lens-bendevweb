@@ -3,6 +3,17 @@ export const fetcher = <TData, TVariables>(
   variables?: TVariables,
   options?: RequestInit['headers']
 ): (() => Promise<TData>) => {
+
+
+  async function getAccessToken() {
+    //TODO RESTART HERE <> <> 
+    //TODO                <>...I'M HERE!!
+    //: Check Local Storage for the access token
+    //: If not access token return null
+    //: If access token check the expiration date
+  };
+
+
   return async () => {
     const res = await fetch("https://api.lens.dev/", {
       method: 'POST',
