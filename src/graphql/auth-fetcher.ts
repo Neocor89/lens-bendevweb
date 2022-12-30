@@ -1,3 +1,6 @@
+import { isTokenExpired, readAccessToken } from "../lib/auth/helpers";
+import refreshAccessToken from "../lib/auth/refreshAccessToken";
+
 export const fetcher = <TData, TVariables>(
   query: string,
   variables?: TVariables,
@@ -6,21 +9,37 @@ export const fetcher = <TData, TVariables>(
 
 
   async function getAccessToken() {
-    //TODO RESTART HERE <> <> 
-    //TODO                <>...I'M HERE!!
-    //: Check Local Storage for the access token
-    //: If not access token return null
-    //: If access token check the expiration date
+    //: 1 Check Local Storage for the access token
+    const token = readAccessToken();
+
+    //: 2 If not access token return null
+    if (!token) return null;
+
+    let accessToken = token.accessToken;
+    
+    //: 3 If access token check the expiration date
+    if (isTokenExpired( token.exp)) {
+      //: If it's expired update it using refresh token
+      const newToken = await refreshAccessToken();
+      if (!newToken) return null;
+      accessToken = newToken;
+      
+    }
+
+    //: Last thing return Token
+    return accessToken;
   };
 
 
   return async () => {
+    const token = typeof window !== "undefined" ? await getAccessToken() : null;
+
     const res = await fetch("https://api.lens.dev/", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...options,
-        //: Adding Authentification headers here
+        "x-access-token": token ? token : "",
       },
       body: JSON.stringify({
         query,
