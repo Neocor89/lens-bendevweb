@@ -1,8 +1,34 @@
 const STORAGE_KEY = "LH_STORAGE_KEY";
 
+export function isTokenExpired(exp: number) {
+  if(!exp) return true;
+
+  if (Date.now() >= exp * 1000) {
+    return true;
+  }
+  return false;
+}
+
 //: 1 Reading access token from storage
 export function readAccessToken() {
-  
+  //: Check Client-side environement
+  if (typeof window === "undefined") return null;
+
+  const ls = localStorage || window.localStorage;
+
+  if (!ls) {
+    throw new Error("Localstorage is Not avaiable" )    
+  }
+
+  const data = ls.getItem(STORAGE_KEY);
+
+  if (!data) return null;
+
+  return JSON.parse(data) as {
+    accessToken: string;
+    refreshToken: string;
+    exp: number;
+  };
 }
 
 //: Setting the access token in storage
@@ -14,12 +40,15 @@ export function setAccessToken(accessToken: string, refreshToken: string) {
   if (!ls) {
     throw new Error("Localstorage is Not avaiable" )    
   }
+
+  ls.setItem(STORAGE_KEY, JSON.stringify({ accessToken, refreshToken, exp}));
 }
 
+
 //: Parse the JWT token that comes back and extract the exp date field
-export function parseJWt(token: string) {
-  let base64Url = token.split('.')[1];
-  let base64 = base64Url.replace(/-/g, "+").replace(/-/g, "/");
+function parseJWt(token: string) {
+  let base64Url = token.split(".")[1];
+  let base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   let jsonPayload = decodeURIComponent(
     window
     .atob(base64)
