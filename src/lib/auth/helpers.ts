@@ -4,9 +4,9 @@ export function isTokenExpired(exp: number) {
   if(!exp) return true;
 
   if (Date.now() >= exp * 1000) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 //: 1 Reading access token from storage
