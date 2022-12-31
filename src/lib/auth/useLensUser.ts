@@ -25,7 +25,7 @@ export default function useLensUser() {
   }
   );
 
-  console.log(profileQuery.data?.defaultProfile);
+  //: console.log(profileQuery.data?.defaultProfile);
   
 
   return {
