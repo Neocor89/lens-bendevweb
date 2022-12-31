@@ -25,6 +25,9 @@ export default function useLensUser() {
   }
   );
 
+  console.log(profileQuery.data?.defaultProfile);
+  
+
   return {
     isSignedInQuery: localStorageQuery,
     profileQuery: profileQuery,
