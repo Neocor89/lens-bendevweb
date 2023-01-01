@@ -1,11 +1,8 @@
-import SignInButton from '../components/SignInButton';
+import FeedPost from '../components/FeedPost';
 import { PublicationSortCriteria, useExplorePublicationsQuery } from '../graphql/generated';
 import styles from '../styles/Home.module.css'
-
 // import Image from 'next/image'
 // import { Inter } from '@next/font/google'
-// import { PublicationSortCriteria, useExplorePublicationsQuery } from '../graphql/generated'
-
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -33,9 +30,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {data?.explorePublications.items.map((publication) => (
-        <div key={publication.id}>
-          <h3>{publication.metadata.name}</h3>
-        </div>
+        <FeedPost 
+          key={publication.id} 
+          publication={publication} 
+        />
       ))}
     </div>
   )
