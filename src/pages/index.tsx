@@ -9,6 +9,9 @@ import styles from '../styles/Home.module.css'
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  //+ Lens profile bendevweb89.test
+
   const { isLoading, error, data } = useExplorePublicationsQuery({
     request: {
       sortCriteria: PublicationSortCriteria.TopCollected,
@@ -29,7 +32,11 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      Hello World
+      {data?.explorePublications.items.map((publication) => (
+        <div key={publication.id}>
+          <h3>{publication.metadata.name}</h3>
+        </div>
+      ))}
     </div>
   )
 }
