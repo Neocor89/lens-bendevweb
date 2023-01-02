@@ -1,6 +1,7 @@
 import FeedPost from '../components/FeedPost';
 import { PublicationSortCriteria, useExplorePublicationsQuery } from '../graphql/generated';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import { MediaRenderer } from "@thirdweb-dev/react";
 // import Image from 'next/image'
 // import { Inter } from '@next/font/google'
 // const inter = Inter({ subsets: ['latin'] })
