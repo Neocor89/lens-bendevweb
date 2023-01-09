@@ -15,25 +15,31 @@ export default function FeedPost({publication}: Props) {
         <MediaRenderer
         // @ts-ignore
             src={publication?.profile?.picture?.original?.url || "https://res.cloudinary.com/dwoifuutn/image/upload/v1666343939/chat-dapp-logo_e9wmil.png"}
-            alt={publication.profile.name || publication.profile.handle}
+            alt={publication.profile.name || ""}
             className={styles.feedPostProfilePicture}
           />
 
         {/* Author Profile Name */}
         <p className={styles.feedPostProfileName}>
-          {publication.profile.name || publication.profile.handle}
+          {publication.profile.name}
         </p>
       </div>
 
       <div className={styles.feedPostContent}>
-        {/* Name of Author */}
+        {/* - Name of Author */}
+        <h3 className={styles.feedPostContentTitle}>
+          {publication.metadata.name}
+        </h3>
 
         {/* Description of Post */}
+        <p className={styles.feedPostContentDescription}>
+          {publication.metadata.content}
+        </p>
 
         {/* Image | Media if Post is one */}
         {publication.metadata.media?.length > 0 && (
           <MediaRenderer
-            src={publication.metadata.media[0].original.url}
+            src={publication?.metadata?.media[0].original?.url}
             alt={publication.metadata.name || ""}
             className={styles.feedPostContentImage}
           />

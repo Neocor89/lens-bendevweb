@@ -29,7 +29,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.postContainer}>
       {data?.explorePublications.items.map((publication) => (
         <FeedPost 
           key={publication.id} 
