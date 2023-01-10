@@ -8,7 +8,7 @@ import { MediaRenderer } from "@thirdweb-dev/react";
 
 export default function Home() {
 
-  //+ Lens profile bendevweb89.test
+  // Lens profile bendevweb89.test
 
   const { isLoading, error, data } = useExplorePublicationsQuery({
     request: {

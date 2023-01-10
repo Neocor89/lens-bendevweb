@@ -1,4 +1,4 @@
-# `Lens` Bendevweb Social Media
+# <span style="color: greenyellow;">**Lens**</span> Bendevweb Social Media
 
 ### _This project was built with :_
 
@@ -10,13 +10,16 @@
 
 #
 
-> To be `able` to use this application and connect to your account you must have a `wallet` like
-> [Metamask](https://metamask.com) or
-> [Coinnbase](https://coinbase.com)
+### <span style="color: greenyellow; font-weight: 500; text-decoration: underline">_Important_</span>
+
+> To be `able` to use this application and connect to your account you must have a `wallet` like :
+
+- [Metamask](https://metamask.com) 🦊
+- [Coinnbase](https://coinbase.com) 🪙
 
 #
 
-### Getting Started
+### <span style="color: greenyellow; font-weight: 500;">Getting Started</span>
 
 First, run the development server:
 
@@ -28,9 +31,13 @@ yarn dev
 pnpn run dev
 ```
 
+## <span style="color: greenyellow; font-weight: 500;">Render Dapp</span>
+
+<img src="./public/assets/bendevweb-social-media-lens-protocol.png" />
+
 #
 
-## _`Deployement`_
+### <span style="color: greenyellow; font-weight: 500;">_Deployement_</span>
 
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 

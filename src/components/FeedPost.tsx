@@ -46,6 +46,5 @@ export default function FeedPost({publication}: Props) {
         )}
       </div>
     </div>
-    // {publication.metadata.name}
   )
 }
