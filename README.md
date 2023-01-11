@@ -31,6 +31,8 @@ yarn dev
 pnpn run dev
 ```
 
+> Use to IPFS with Lens Protocol
+
 ## <span style="color: greenyellow; font-weight: 500;">Render Dapp</span>
 
 <img src="./public/assets/bendevweb-social-media-lens-protocol.png" />
