@@ -1,4 +1,5 @@
 import { MediaRenderer } from "@thirdweb-dev/react";
+import Link from "next/link";
 import React from 'react'
 import { ExplorePublicationsQuery } from '../graphql/generated';
 import styles from "../styles/FeedPost.module.css";
@@ -21,9 +22,11 @@ export default function FeedPost({publication}: Props) {
           />
 
         {/* Author Profile Name */}
-        <p className={styles.feedPostProfileName}>
+        <Link 
+          href={`/profile/${publication.profile.handle}`}
+          className={styles.feedPostProfileName}>
           {publication.profile.name}
-        </p>
+        </Link>
       </div>
 
       <div className={styles.feedPostContent}>
