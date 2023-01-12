@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { useProfileQuery } from '../../graphql/generated';
+import { useProfileQuery, usePublicationsQuery } from '../../graphql/generated';
 import styles from "../../styles/Profile.module.css";
 
 type Props = {}
@@ -23,7 +23,22 @@ export default function ProfilePage({}: Props) {
     }
   );
 
-  console.log(loadingProfile, profileData);
+  const { isLoading: isLoadingPublications, data: publicationsData } = usePublicationsQuery({
+      request: {
+        profileId: profileData?.profile?.id
+      },
+    }, 
+    {
+      enabled: !!profileData?.profile?.id,
+    }
+  );
+  
+  console.log({ 
+    profileData, 
+    loadingProfile, 
+    isLoadingPublications, 
+    publicationsData 
+  });
   
 
   return (
