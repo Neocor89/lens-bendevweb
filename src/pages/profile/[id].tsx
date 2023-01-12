@@ -12,8 +12,11 @@ export default function ProfilePage({}: Props) {
   // Catch /[id] path from URL
   const { id } = router.query;
 
-  const { isLoading: loadingProfile, data: profileData } = useProfileQuery(
-    {
+  const { 
+    isLoading: loadingProfile, 
+    data: profileData, 
+    error: profileError 
+  } = useProfileQuery({
       request: {
         handle: id
       },
@@ -23,7 +26,11 @@ export default function ProfilePage({}: Props) {
     }
   );
 
-  const { isLoading: isLoadingPublications, data: publicationsData } = usePublicationsQuery({
+  const { 
+    isLoading: isLoadingPublications, 
+    data: publicationsData, 
+    error: publicationsError 
+  } = usePublicationsQuery({
       request: {
         profileId: profileData?.profile?.id
       },
@@ -39,6 +46,14 @@ export default function ProfilePage({}: Props) {
     isLoadingPublications, 
     publicationsData 
   });
+
+  if ( publicationsError || profileError ) {
+    return <div>Could not find this profile!</div>
+  }
+
+  if (loadingProfile) {
+    return <div>Loading Profile...</div>
+  }
   
 
   return (

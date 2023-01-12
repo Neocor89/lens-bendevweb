@@ -50,7 +50,6 @@ export default function FeedPost({publication}: Props) {
           />
         )}
       </div>
-      {/* RESTART HERE >>>  >>> */}
     </div>
   )
 }
