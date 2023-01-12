@@ -11,6 +11,7 @@ export default function FeedPost({publication}: Props) {
   return (
     <div className={styles.feedPostContainer}>
       <div className={styles.feedPostHeader}>
+
         {/* Author Profile Picture */}
         <MediaRenderer
         // @ts-ignore
@@ -26,6 +27,7 @@ export default function FeedPost({publication}: Props) {
       </div>
 
       <div className={styles.feedPostContent}>
+        
         {/* - Name of Author */}
         <h3 className={styles.feedPostContentTitle}>
           {publication.metadata.name}

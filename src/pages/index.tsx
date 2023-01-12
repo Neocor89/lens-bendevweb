@@ -14,7 +14,13 @@ export default function Home() {
     request: {
       sortCriteria: PublicationSortCriteria.TopCollected,
     }
-  });
+  },
+    { 
+      // Not Refetching User Data
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+    }
+  );
 
   if (error) {
     return(

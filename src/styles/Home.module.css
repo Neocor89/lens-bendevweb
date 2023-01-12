@@ -8,7 +8,7 @@
 } */
 
 .container {
-  /* Full page container */
+  /* Full Page */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .postsContainer {
-  /* Container for all the posts with a max width */
+  /* Max width all posts Container */
   display: flex;
   flex-direction: column;
   align-items: center;
