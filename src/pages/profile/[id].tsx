@@ -1,5 +1,6 @@
 import { MediaRenderer } from '@thirdweb-dev/react';
 import { useRouter } from 'next/router';
+import FeedPost from '../../components/FeedPost';
 import { useProfileQuery, usePublicationsQuery } from '../../graphql/generated';
 import styles from "../../styles/Profile.module.css";
 
@@ -99,11 +100,16 @@ export default function ProfilePage({}: Props) {
         <p className={styles.followerCount}>
           {profileData?.profile?.stats.totalFollowers} {" Followers"}
         </p>
+
+        <div className={styles.publicationsContainer}>
+        {
+          //: Mapping in data of Array publication
+          publicationsData?.publications.items.map((publication) => (
+            <FeedPost publication={publication} key={publication.id} />
+          ))
+        }
+
       </div>
-
-      <div className={styles.publicationsContainer}>
-        {/* Publications FeedItem */}
-
       </div>
     </div>
   )

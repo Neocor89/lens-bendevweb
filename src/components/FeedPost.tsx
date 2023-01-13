@@ -50,6 +50,23 @@ export default function FeedPost({publication}: Props) {
           />
         )}
       </div>
+
+      {/* Data of USers Publications */}
+      <div className={styles.feedPostFooter}>
+
+        <p className={styles.feedPostContentInfo}>
+          {publication.stats.totalAmountOfCollects} Collects
+        </p>
+
+        <p className={styles.feedPostContentInfo}>
+          {publication.stats.totalAmountOfComments} Comments
+        </p>
+
+        <p className={styles.feedPostContentInfo}>
+          {publication.stats.totalAmountOfMirrors} Mirrors
+        </p>
+
+      </div>
     </div>
   )
 }

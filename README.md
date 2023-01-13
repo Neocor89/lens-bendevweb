@@ -35,7 +35,15 @@ pnpn run dev
 
 ## <span style="color: greenyellow; font-weight: 500;">Render Dapp</span>
 
-<img src="./public/assets/bendevweb-social-media-lens-protocol.png" />
+### **Posts Section**
+
+<img src="./public/assets/readme/bendevweb-social-media-lens-protocol.png" />
+
+<div style="margin: 20px 0px;"></div>
+
+### **Profile Section**
+
+<img src="./public/assets/readme/asset-users-profile-view.png" />
 
 #
 
