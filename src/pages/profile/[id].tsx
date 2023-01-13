@@ -83,9 +83,9 @@ export default function ProfilePage({}: Props) {
         )} 
 
         {/* Profile Name */}
-        <h2 className={styles.profileName}>
+        <h1 className={styles.profileName}>
           {profileData?.profile?.name || "User not exist"}
-        </h2>
+        </h1>
 
         {/* Profile Handle */}
         <p className={styles.profileHandle}>

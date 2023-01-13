@@ -12,8 +12,8 @@ export default function Home() {
 
   const { isLoading, error, data } = useExplorePublicationsQuery({
     request: {
-      sortCriteria: PublicationSortCriteria.TopCollected,
-    }
+      sortCriteria: PublicationSortCriteria.Latest,
+    },
   },
     { 
       // Not Refetching User Data
