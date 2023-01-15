@@ -37,8 +37,7 @@
 .profileHandle {
   font-size: 1.5rem;
   color: greenyellow;
-  margin-top: 5px;
-
+  margin-top: 10px;
 }
 
 .profileName {
@@ -47,7 +46,7 @@
 }
 
 .followerCount {
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 30px;
 }
 
@@ -55,11 +54,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 170px;
 }
 
 .loadingPublications {
   font-family: 'Port Lligat Sans', sans-serif;
+  color: greenyellow;
+  font-weight: bolder 900;
   -webkit-animation: loadingAnimation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) reverse both;
   animation: loadingAnimation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) reverse both;
 }
