@@ -59,6 +59,7 @@
 
 .loadingPublications {
   font-family: 'Port Lligat Sans', sans-serif;
+  font-size: 2.1rem;
   color: greenyellow;
   font-weight: bolder 900;
   -webkit-animation: loadingAnimation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) reverse both;
