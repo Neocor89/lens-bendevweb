@@ -1,5 +1,5 @@
 .headerContainer {
-  height: 64px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,14 +8,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: darkslategray;
-  border-bottom: 1px solid white;
+  background-color: #282828;
+  border-bottom: 1px solid greenyellow;
   z-index: 99999;
 }
 
-.logo {
-  height: 48px;
-  width: 48px;
+.headerLogo {
+  height: 50px;
+  width: 40px;
+  margin-top: 5px;
   margin-left: 16px;
 }
 
