@@ -50,3 +50,45 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
+.loadingPublicationsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.loadingPublications {
+  font-family: 'Port Lligat Sans', sans-serif;
+  -webkit-animation: loadingAnimation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) reverse both;
+  animation: loadingAnimation 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) reverse both;
+}
+
+
+
+@-webkit-keyframes loadingAnimation {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes loadingAnimation {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}

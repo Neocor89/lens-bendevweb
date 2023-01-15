@@ -53,7 +53,9 @@ export default function ProfilePage({}: Props) {
   }
 
   if (loadingProfile) {
-    return <div>Loading Profile...</div>
+    return <div className={styles.loadingPublicationsContainer}>
+    <h2 className={styles.loadingPublications}>Loading Publications...</h2>
+  </div>
   }
 
   return (
@@ -98,18 +100,22 @@ export default function ProfilePage({}: Props) {
         </p>
 
         <p className={styles.followerCount}>
-          {profileData?.profile?.stats.totalFollowers} {" Followers"}
+          {profileData?.profile?.stats.totalFollowers} <strong>{"  Followers"}</strong>
         </p>
 
         <div className={styles.publicationsContainer}>
-        {
-          //: Mapping in data of Array publication
-          publicationsData?.publications.items.map((publication) => (
-            <FeedPost publication={publication} key={publication.id} />
-          ))
-        }
-
+          {isLoadingPublications ? ( 
+            <div className={styles.loadingPublicationsContainer}>
+              <h2 className={styles.loadingPublications}>Loading Publications...</h2>
+            </div> 
+          ) : (
+            // Mapping in data of Array publication
+            publicationsData?.publications.items.map((publication) => (
+              <FeedPost publication={publication} key={publication.id} />
+            ))
+          )}
       </div>
+
       </div>
     </div>
   )
