@@ -5,19 +5,23 @@ import SignInButton from './SignInButton';
 
 export default function Header() {
   return (
-    <div className={styles.headerContainer}>
-        <Link href={"/"}>
-          <img 
-            src="/logo-profile.png"
-            alt='logo'
-            className={styles.headerLogo}
-          />
-        </Link>
+    <>
+      <div className={styles.headerContainer}>
+          <Link href={"/"}>
+            <img 
+              src="/logo-profile.png"
+              alt='logo'
+              className={styles.headerLogo}
+            />
+          </Link>
 
-      {/* Signin Users */}
-      <div className={styles.right}>
-      <SignInButton />
+        {/* Signin Users */}
+        <div className={styles.right}>
+        <SignInButton />
+        </div>
       </div>
-    </div>
+
+      <div style={{ marginTop: "55px" }} />
+    </>
   )
 }

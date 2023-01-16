@@ -6,8 +6,6 @@
 
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white) <span style="margin-left: 10px;"></span> ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) <span style="margin-left: 10px;"></span> ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-#### Running on the `blockchain` thanks to [Thirdweb](https://thirdweb.com) and the Lens protocol.
-
 #
 
 ### <span style="color: greenyellow; font-weight: 500; text-decoration: underline">_Important_</span>
@@ -16,6 +14,20 @@
 
 - [Metamask](https://metamask.com) 🦊
 - [Coinnbase](https://coinbase.com) 🪙
+
+#
+
+### <span style="color: greenyellow; font-weight: 500; text-decoration: underline">_Project Information_</span>
+
+- Project running on the blockchain thanks to [Thirdweb](https://thirdweb.com) and the [Lens](https://docs.lens.xyz/docs) protocol. 🌿
+
+<div style="margin-top: 15px;"></div>
+
+[**EIP-712**](https://eips.ethereum.org/EIPS/eip-712)
+
+- Standard for hashing and signing of typed structured data as opposed to just bytestrings.
+
+- This EIP aims to improve the usability of message signing.
 
 #
 

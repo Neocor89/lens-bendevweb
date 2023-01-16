@@ -1,4 +1,4 @@
-import { ChainId, ConnectWallet, useAddress, useNetwork, useNetworkMismatch } from '@thirdweb-dev/react'
+import { ChainId, ConnectWallet, MediaRenderer, useAddress, useNetwork, useNetworkMismatch } from '@thirdweb-dev/react'
 import React from 'react'
 import useLensUser from '../lib/auth/useLensUser';
 import useLogin from '../lib/auth/useLogin';
@@ -55,7 +55,18 @@ export default function SignInButton({}: Props) {
 
       //: Done Loading with Lens default profile
       if (profileQuery.data?.defaultProfile) {
-        return <div>Hello {profileQuery.data?.defaultProfile?.handle}</div>
+        return <div>
+          <MediaRenderer
+          //@ts-ignore
+            src={profileQuery?.data?.defaultProfile?.picture?.original.url || "https://res.cloudinary.com/dwoifuutn/image/upload/v1666536960/bored-landing-page_jgaklg.png" }
+            alt={profileQuery.data.defaultProfile.name || ""}
+            style={{ 
+              width: 50, 
+              height: 45, 
+              borderRadius: "50%",
+            }}
+          />
+        </div>
       }
 
       return (
