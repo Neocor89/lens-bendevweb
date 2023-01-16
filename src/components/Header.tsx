@@ -15,7 +15,9 @@ export default function Header() {
         </Link>
 
       {/* Signin Users */}
+      <div className={styles.right}>
       <SignInButton />
+      </div>
     </div>
   )
 }
