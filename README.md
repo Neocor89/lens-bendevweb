@@ -33,6 +33,10 @@
 
 - IPFS is a distributed system for storing and accessing files, websites, applications, and data.
 
+[**ABI**](https://solidity-fr.readthedocs.io/fr/latest/abi-spec.html#:~:text=The%20Contract%20Application%20Binary%20Interface%20%28ABI%29%20is%20the,to%20its%20type%2C%20as%20described%20in%20this%20specification.)
+
+- Contract Application Binary Interface (ABI) is the standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction.
+
 #
 
 ### <span style="color: greenyellow; font-weight: 500;">Getting Started</span>

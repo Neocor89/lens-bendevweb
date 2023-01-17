@@ -1,7 +1,9 @@
-import { MediaRenderer } from '@thirdweb-dev/react';
+import { MediaRenderer, Web3Button } from '@thirdweb-dev/react';
 import { useRouter } from 'next/router';
 import FeedPost from '../../components/FeedPost';
+import { LENS_CONTRACT_ABI, LENS_CONTRACT_ADDRESS } from '../../const/contracts';
 import { useProfileQuery, usePublicationsQuery } from '../../graphql/generated';
+import { useFollow } from '../../lib/useFollow';
 import styles from "../../styles/Profile.module.css";
 
 type Props = {}
@@ -12,6 +14,9 @@ export default function ProfilePage({}: Props) {
 
   // Catch /[id] path from URL
   const { id } = router.query;
+  
+  const { mutate: followUser } = useFollow();
+
 
   const { 
     isLoading: loadingProfile, 
@@ -27,6 +32,7 @@ export default function ProfilePage({}: Props) {
     }
   );
 
+
   const { 
     isLoading: isLoadingPublications, 
     data: publicationsData, 
@@ -40,13 +46,6 @@ export default function ProfilePage({}: Props) {
       enabled: !!profileData?.profile?.id,
     }
   );
-  
-  console.log({ 
-    profileData, 
-    loadingProfile, 
-    isLoadingPublications, 
-    publicationsData 
-  });
 
   if ( publicationsError || profileError ) {
     return <div>Could not find this profile!</div>
@@ -102,6 +101,14 @@ export default function ProfilePage({}: Props) {
         <p className={styles.followerCount}>
           {profileData?.profile?.stats.totalFollowers} <strong>{"  Followers"}</strong>
         </p>
+
+        <Web3Button
+          contractAddress={ LENS_CONTRACT_ADDRESS }
+          contractAbi={ LENS_CONTRACT_ABI }
+          action={() => followUser(profileData?.profile?.id)}
+        >
+          Follow User
+        </Web3Button>
 
         <div className={styles.publicationsContainer}>
           {isLoadingPublications ? ( 
