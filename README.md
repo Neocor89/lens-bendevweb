@@ -29,6 +29,10 @@
 
 - This EIP aims to improve the usability of message signing.
 
+[**IPFS**](https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralization)
+
+- IPFS is a distributed system for storing and accessing files, websites, applications, and data.
+
 #
 
 ### <span style="color: greenyellow; font-weight: 500;">Getting Started</span>
@@ -43,19 +47,23 @@ yarn dev
 pnpn run dev
 ```
 
-> Use to IPFS with Lens Protocol
+#
 
-## <span style="color: greenyellow; font-weight: 500;">Render Dapp</span>
+### <div style="color: greenyellow; font-weight: 500; margin-bottom: 15px;">Render Dapp</div>
 
-### **Posts Section**
+#### **Posts Section**
+
+<div style="margin-bottom: 10px;"></div>
 
 <img src="./public/assets/readme/bendevweb-social-media-lens-protocol.png" />
 
 <div style="margin: 20px 0px;"></div>
 
-### **Profile Section**
+#### **Profile Section**
 
-<img src="./public/assets/readme/asset-users-profile-view.png" />
+<div style="margin-bottom: 10px;"></div>
+
+<img src="./public/assets/readme/profile-render-lens-protocol.png" />
 
 #
 
