@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useAddress, useSDK } from "@thirdweb-dev/react";
 import { LENS_CONTRACT_ABI, LENS_CONTRACT_ADDRESS } from "../const/contracts";
 import { useCreateFollowTypedDataMutation } from "../graphql/generated";
+import useLogin from "./auth/useLogin";
 import { signTypedDataWithOmmittedTypename, splitSignature } from "./helpers";
 
 export function useFollow() {
@@ -9,10 +10,13 @@ export function useFollow() {
 
   const sdk = useSDK();
   const address = useAddress();
+  const { mutateAsync: loginUser } = useLogin();
   
   async function follow(userId: string) {
+    // 1 Login
+    await loginUser();
 
-   /* 1 Use the auto generated mutation "useCreateFollowTypedData"
+   /* 2 Use the auto generated mutation "useCreateFollowTypedData"
    Getting typed Data for user Signin */
   const typedData = await requestTypedData({
     request: { 
@@ -28,7 +32,7 @@ export function useFollow() {
 
   if (!sdk) return;
 
-  // 2 Ask the User to sign typed Data
+  // 3 Ask the User to sign typed Data
   const signature = await signTypedDataWithOmmittedTypename(
     sdk,
     domain,

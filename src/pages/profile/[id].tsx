@@ -15,7 +15,7 @@ export default function ProfilePage({}: Props) {
   // Catch /[id] path from URL
   const { id } = router.query;
   
-  const { mutate: followUser } = useFollow();
+  const { mutateAsync: followUser } = useFollow();
 
 
   const { 
@@ -74,7 +74,7 @@ export default function ProfilePage({}: Props) {
 
         {/* Profile Picture */}
         {/* @ts-ignore */}
-        {profileData?.profile?.picture.original.url && (
+        {profileData?.profile?.picture?.original?.url && (
             <MediaRenderer
             // @ts-ignore
               src={profileData.profile.picture.original.url || "https://res.cloudinary.com/dwoifuutn/image/upload/v1666343939/chat-dapp-logo_e9wmil.png"} 
@@ -105,7 +105,7 @@ export default function ProfilePage({}: Props) {
         <Web3Button
           contractAddress={ LENS_CONTRACT_ADDRESS }
           contractAbi={ LENS_CONTRACT_ABI }
-          action={() => followUser(profileData?.profile?.id)}
+          action={async () => await followUser(profileData?.profile?.id)}
         >
           Follow User
         </Web3Button>
