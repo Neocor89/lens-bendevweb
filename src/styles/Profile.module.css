@@ -7,8 +7,6 @@
   justify-content: center;
   padding: 1rem;
   margin: 1rem;
-  border-bottom: 1px solid #ccc;
-
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.02), 0 5px 5px rgba(0, 0, 0, 0.04);
 }
 
@@ -49,6 +47,7 @@
   margin-top: 25px;
   margin-bottom: 30px;
 }
+
 
 .loadingPublicationsContainer {
   display: flex;

@@ -103,8 +103,8 @@ export default function ProfilePage({}: Props) {
         </p>
 
         <Web3Button
-          contractAddress={ LENS_CONTRACT_ADDRESS }
-          contractAbi={ LENS_CONTRACT_ABI }
+          contractAddress={LENS_CONTRACT_ADDRESS}
+          contractAbi={LENS_CONTRACT_ABI}
           action={async () => await followUser(profileData?.profile?.id)}
         >
           Follow User

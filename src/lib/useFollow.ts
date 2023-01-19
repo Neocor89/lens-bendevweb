@@ -6,7 +6,9 @@ import useLogin from "./auth/useLogin";
 import { signTypedDataWithOmmittedTypename, splitSignature } from "./helpers";
 
 export function useFollow() {
-  const { mutateAsync: requestTypedData } = useCreateFollowTypedDataMutation();
+  const { 
+    mutateAsync: requestTypedData 
+  } = useCreateFollowTypedDataMutation();
 
   const sdk = useSDK();
   const address = useAddress();
