@@ -1,3 +1,7 @@
+<img src="./public/assets/blog-banner.png" />
+
+<div style="margin-bottom: 35px;"></div>
+
 # <span style="color: greenyellow;">**Lens**</span> Bendevweb Social Media
 
 ### _This project was built with :_
@@ -63,11 +67,19 @@ pnpn run dev
 
 <div style="margin: 20px 0px;"></div>
 
-#### **Profile Section**
+#### <span style="color: greenyellow;">**Profile Section**</span>
 
 <div style="margin-bottom: 10px;"></div>
 
 <img src="./public/assets/readme/profile-render-lens-protocol.png" />
+
+<div style="margin-bottom: 10px;"></div>
+
+#### <span style="color: greenyellow;">**Create Post Section**</span>
+
+<div style="margin-bottom: 18px;"></div>
+
+<img src="./public/assets/readme/lens-Bendevweb-createPost.png" />
 
 #
 
