@@ -16,6 +16,7 @@ export async function signTypedDataWithOmmittedTypename(
   types: Record<string, any>,
   value: Record<string, any>
   ) {
+    //@ts-ignore
     return await sdk.wallet.signTypedData(
       omitTypename(domain) as EIP712Domain,
       omitTypename(types) as Record<string, any>,

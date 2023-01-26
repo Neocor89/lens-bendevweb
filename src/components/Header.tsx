@@ -7,6 +7,7 @@ export default function Header() {
   return (
     <>
       <div className={styles.headerContainer}>
+        <div className={styles.left}>
           <Link href={"/"}>
             <img 
               src="/logo-profile.png"
@@ -15,6 +16,10 @@ export default function Header() {
             />
           </Link>
 
+          <button className={styles.createPost}>
+            <Link href={"/create"}>Create Post</Link>
+          </button>
+        </div>
         {/* Signin Users */}
         <div className={styles.right}>
         <SignInButton />

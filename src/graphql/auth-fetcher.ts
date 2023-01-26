@@ -47,7 +47,8 @@ export const fetcher = <TData, TVariables>(
         variables
       })
     });
- 
+
+ //! ERROR IN THIS FILE AUTH_FETCHER
     const json = await res.json()
  
     if (json.errors) {
